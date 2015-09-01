@@ -18,7 +18,7 @@
 	<script src="us-states.js"></script>
 	<script>
 
-		var map = L.map('map').setView([62.30879, 15.99609], 4);
+		var map = L.map('map').setView([62.30879, 15.99609], 5);
 
 		var geojson;
 
@@ -31,8 +31,8 @@
 		}).addTo(map);
 
 		function getColor(d) {
-		    return d > 1000 ? '#800026' :
-		           d > 500  ? '#BD0026' :
+		    return d > 800 ? '#800026' :
+		           d > 400  ? '#BD0026' :
 		           d > 200  ? '#E31A1C' :
 		           d > 100  ? '#FC4E2A' :
 		           d > 50   ? '#FD8D3C' :
@@ -109,7 +109,7 @@
 		// method that we will use to update the control based on feature properties passed
 		info.update = function (props) {
 		    this._div.innerHTML = '<h4>Refugees received per Municipality 2015</h4>' +  (props ?
-		        '<b>' + props.KnNamn + '</b><br />' + props.mottagna + ' received' 
+		        '<b>' + props.KnNamn + '</b> ['+ props.population + ' citizens] <br />' + props.mottagna + ' received' 
 		        + '<br /> where of ' + props.vrv_ensmbrn +' unaccompanied minors'
 		        : 'Hover over an municipality');
 		};
@@ -121,7 +121,7 @@
 		legend.onAdd = function (map) {
 
 		    var div = L.DomUtil.create('div', 'info legend'),
-		        grades = [0, 10, 20, 50, 100, 200, 500, 1000],
+		        grades = [0, 10, 20, 50, 100, 200, 400, 800],
 		        labels = [];
 
 		    // loop through our intervals and generate a label with a colored square for each interval
