@@ -6,12 +6,12 @@
 
 	/*-----------------Create layers and map-------------------*/
 
-	definitiveLayer = L.geoJson(SWE_munis, {
+	definitiveLayer = L.geoJson(geojson, {
 		style: styleDefinitive,
 		onEachFeature: onEachFeature
 	});
 
-	relativeLayer = L.geoJson(SWE_munis, {
+	relativeLayer = L.geoJson(geojson, {
 		style: styleRelative,
 		onEachFeature: onEachFeature
 	});
