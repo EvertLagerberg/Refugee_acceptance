@@ -227,6 +227,10 @@
 
 
 
+if (L.Browser.touch) {
+    L.control.touchHover().addTo(map);
+}
+
 		
 
 
