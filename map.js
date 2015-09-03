@@ -33,6 +33,13 @@
 	}).addTo(map);	
 
 
+	if (L.Browser.touch) {
+			L.control.touchHover().addTo(map);
+		}
+
+	L.Path.CLIP_PADDING = 0.12;
+
+
 
 		function getColorDefinitive(d) {
 		    return d > 800 	? '#49006a' :
@@ -227,9 +234,6 @@
 
 
 
-if (L.Browser.touch) {
-    L.control.touchHover().addTo(map);
-}
 
 		
 
