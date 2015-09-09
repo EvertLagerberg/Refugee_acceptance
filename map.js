@@ -28,7 +28,7 @@
 		maxZoom: 18,
 		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
 			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+			'Imagery © <a href="http://mapbox.com">Mapbox</a>, ' + 'Refugee data from <a href="http://www.migrationsverket.se/download/18.39a9cd9514a3460772133ef/1441106507099/Kommunmottagna+enligt+ersattningsf%C3%B6rordningen+2015.xls">Migrationsverket</a>',
 		id: 'mapbox.light'
 	}).addTo(map);	
 
@@ -155,7 +155,7 @@
 		    this._div.innerHTML = '<h4>Refugees received per Municipality 2015</h4>' +  (props ?
 		        '<b>' + props.KnNamn + '</b> ['+ props.population + ' citizens] <br />' + props.mottagna + ' received' 
 		        + '<br /> where of ' + props.vrv_ensmbrn +' unaccompanied minors'
-		        : 'Hover over a municipality');
+		        : 'Hover over a municipality <br /> <br /> (data last updated on 2015-09-01)');
 		};
 
 		info.addTo(map);
